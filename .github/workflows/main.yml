@@ -18,6 +18,8 @@ jobs:
       
     - name: Deploy to Server 1
       uses: easingthemes/ssh-deploy@main
+      with:
+         aws-region: ap-south-1
       env:
         SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
         REMOTE_HOST: ${ { secrets.HOST_DNS }}
