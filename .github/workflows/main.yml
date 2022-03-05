@@ -1,4 +1,4 @@
-name: Upload Website
+name: Push to EC2
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    name: Upload to Amazon S3
+    name: Deploy to EC2 on master branch push
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -15,11 +15,11 @@ jobs:
 
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
-      with:
-        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        aws-region: ap-south-1
-
-    - name: Deploy to s3
-      run: |
-        ec2-13-127-140-227.ap-south-1.compute.amazonaws.com
+      
+    - name: Deploy to Server 1
+      uses: easingthemes/ssh-deploy@main
+      env:
+        SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+        REMOTE_HOST: ${ { secrets.HOST_DNS }}
+        REMOTE_USER: ${ { secrets.USERNAME }}
+        TARGET: ${ { secrets.TARGET_DIR }}
