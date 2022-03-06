@@ -1,6 +1,6 @@
-name: "ssh deploy"
+name: "deploy-to-ec2"
 description: "Index deployment with rsync/ssh"
-author: "lok"
+author: "LOKI7198/deploy-to-ec2"
 inputs:
   SSH_PRIVATE_KEY: # Private Key
     description: "Private Key"
