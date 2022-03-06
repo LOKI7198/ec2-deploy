@@ -1,0 +1,17 @@
+name: "ssh deploy"
+description: "NodeJS action for FAST deployment with rsync/ssh"
+author: "LOKI7198"
+inputs:
+  SSH_PRIVATE_KEY: # Private Key
+    description: "Private Key"
+    required: true
+  REMOTE_HOST:
+    description: "Remote host"
+    required: true
+  REMOTE_USER:
+    description: "Remote user"
+    required: true
+  TARGET:
+    description: "Target directory"
+    required: false
+    default: "/var/www/html"
