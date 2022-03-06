@@ -21,7 +21,7 @@ jobs:
         aws-region: ap-south-1
       
     - name: Deploy to Server 
-      uses: deploy-to-ec2/.github/workflows/main.yml@main
+      uses: LOKI7198/deploy-to-ec2/.github/workflows/main.yml@main
       env:
         SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
         REMOTE_HOST: ${ { secrets.HOST_DNS }}
