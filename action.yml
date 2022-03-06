@@ -1,0 +1,14 @@
+name: "ssh deploy"
+description: "Index deployment with rsync/ssh"
+author: "lok"
+inputs:
+  SSH_PRIVATE_KEY: # Private Key
+    description: "Private Key"
+    required: true
+  REMOTE_HOST:
+    description: "Remote host"
+    required: true
+  TARGET:
+    description: "Target directory"
+    required: false
+    default: "/var/www/html"
