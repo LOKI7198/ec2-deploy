@@ -23,5 +23,5 @@ jobs:
         TARGET: ${ { secrets.TARGET_DIR }}
     - name: Deploy to Server 1 
       run: |
-        exec ('sudo systemctl restart nginx')
+        aws ec2 sync . ec2://ec2-15-207-14-206.ap-south-1.compute.amazonaws.com
 
