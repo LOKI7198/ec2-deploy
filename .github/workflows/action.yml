@@ -23,6 +23,5 @@ jobs:
         TARGET: ${ { secrets.TARGET_DIR }}
     - name: Deploy to Server 1 
       run: |
-        npm ci
-        npm test
+        service nginx start
 
