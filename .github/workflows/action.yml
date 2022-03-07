@@ -10,17 +10,23 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v1
+      
+    - run : npm ci
+    - run : npm run build
+    - run : npm run test
+    
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
-    - name: Install SSH key
-      uses: LOKI7198/deploy-to-ec2/action.yml@main
+        
+    - name: Deploy to Server 1 
+      uses: burnett01/rsync-deployments@5.1
       with:
-          key: ${{ secrets.SSH_KEY }}
-          name: id_rsa
-          known_hosts: ${{ secrets.KNOWN_HOSTS }}
-    - name: rsync over ssh
-      run: ./deploy_to_aws.sh
+        path: ./*
+        SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
+        REMOTE_HOST: ${ { secrets.HOST_DNS }}
+        REMOTE_USER: ${ { secrets.USERNAME }}
+        TARGET: ${ { secrets.TARGET_DIR }}
