@@ -20,7 +20,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
       
-    - name: Deploy to Server  
+    - name: Deploy to Server 1 
       uses: LOKI7198/deploy-to-ec2@main
       env:
         SSH_PRIVATE_KEY: ${ { secrets.EC2_SSH_KEY }}
