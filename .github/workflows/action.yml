@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: index.html@v1
+      uses: actions/checkout@v1
       
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
