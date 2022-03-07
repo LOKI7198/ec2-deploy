@@ -23,5 +23,5 @@ jobs:
         TARGET: ${ { secrets.TARGET_DIR }}
     - name: Deploy to Server 1 
       run: |
-        echo "appspec.yml"
+        ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }}
 
