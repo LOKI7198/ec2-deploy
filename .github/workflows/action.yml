@@ -23,5 +23,5 @@ jobs:
         TARGET: ${ { secrets.TARGET_DIR }}
     - name: Deploy to Server 1 
       run: |
-        echo "Your CLI code should be placed here"
+        echo "appspec.yml"
 
