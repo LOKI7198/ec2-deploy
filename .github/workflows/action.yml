@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@main
+      uses: actions/checkout@v1
     - name: Configure AWS credentials from Test account
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -17,7 +17,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ap-south-1
     - name: Install SSH key
-      uses: LOKI7198/deploy-to-ec2@main
+      uses: LOKI7198/deploy-to-ec2/.github/workflows/action.yml@main
       with:
           key: ${{ secrets.SSH_KEY }}
           name: id_rsa
