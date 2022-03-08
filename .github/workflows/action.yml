@@ -23,5 +23,5 @@ jobs:
         TARGET: ${ { secrets.TARGET_DIR }}
     - name: Deploy to Server 1 
       run: |
-        echo whoiam
+        echo whoami
 
