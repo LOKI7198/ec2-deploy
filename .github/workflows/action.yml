@@ -16,6 +16,6 @@ jobs:
             USER_NAME : ${{ secrets.USER_NAME  }}
     - name: Deploy to Server  
       run: |
-          echo hostname
+         hostname
     
 
