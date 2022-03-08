@@ -5,11 +5,11 @@ on:
       - main
 jobs:
   Deploy:
-    runs-on: ubuntu-latest
-    
-    steps:
-      - uses: actions/checkout@v2 
-      - name: Deploy in EC2
+     - name: deploy
+       runs-on: ubuntu-latest
+   steps:
+     - name: Deploy in EC2 
+        uses: actions/checkout@v1
         env:
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
             HOSTNAME : ${{ secrets.HOSTNAME  }}
