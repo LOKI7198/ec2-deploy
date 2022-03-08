@@ -4,18 +4,18 @@ on:
     branches:
       - main
 jobs:
-  Deploy:
-     - name: deploy
-       runs-on: ubuntu-latest
-   steps:
-     - name: Deploy in EC2 
-        uses: actions/checkout@v1
-        env:
+  deploy:
+    name: deploy to ec2
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+      env :
             PRIVATE_KEY: ${{ secrets.AWS_PRIVATE_KEY  }}
             HOSTNAME : ${{ secrets.HOSTNAME  }}
             USER_NAME : ${{ secrets.USER_NAME  }}
-      - name: Deploy to Server  
-        run: |
+    - name: Deploy to Server  
+      run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
           ssh -o StrictHostKeyChecking=no -i private_key ${USERNAME}@${HOST_DNS} '
 
