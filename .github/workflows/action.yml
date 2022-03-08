@@ -18,5 +18,5 @@ jobs :
       env :
             DEPLOY_KEY: ${{ secrets.deploy_key  }}
       run: |
-       ssh -T ubuntu@ec2-13-235-75-86.ap-south-1.compute.amazonaws.com 
+       ssh -o -i private_key ubuntu@ec2-13-235-75-86.ap-south-1.compute.amazonaws.com 
 
