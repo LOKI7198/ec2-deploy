@@ -16,7 +16,6 @@ jobs :
             USER_NAME : ${{ secrets.USER_NAME  }}
     - name: Deploy to EC2 1 
       run: |
-       uptime
-       hostname
+       date
     
 
