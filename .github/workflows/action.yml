@@ -17,11 +17,6 @@ jobs:
     - name: Deploy to Server  
       run: |
          echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-         ssh -T StrictHostKeyChecking=no @${{ secrets.AWS_PRIVATE_KEY  }}@${{ secrets.USER_NAME  }}@${{ secrets.HOSTNAME  }} '
-         hostname
-         time
-         whoami
-         uname
-         hostname -i
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
     
 
