@@ -20,5 +20,6 @@ jobs:
          time
          whoami
          uname
+         hostname -i
     
 
