@@ -17,10 +17,6 @@ jobs:
     - name: Deploy to Server  
       run: |
          hostname
-         cd /var/www/html &&
-            git checkout master &&
-            git fetch --all &&
-            git push origin master &&
-          '
+         time
     
 
