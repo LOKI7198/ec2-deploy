@@ -30,9 +30,9 @@ jobs:
  
           
           # will put all file under this path
-          local_path: ./* # default is ./*
+          local_path: ./index.html # default is ./*
           # files will copy to under remote_path
-          remote_path: chmod 777 /var/www/html/index.html
+          remote_path: chmod 777 /var/www/html/
           
           # sftp args
           args: '-o ConnectTimeout=5'
