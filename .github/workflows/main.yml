@@ -23,8 +23,8 @@ jobs:
       - name: SFTP Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
         with:
-          username: ubuntu
-          server: ip-172-31-7-217.ap-south-1.compute.internal
+          username: 'ubuntu'
+          server: ec2-3-108-238-40.ap-south-1.compute.amazonaws.com
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
  
@@ -32,7 +32,7 @@ jobs:
           # will put all file under this path
           local_path: ./* # default is ./*
           # files will copy to under remote_path
-          remote_path: /var/www/html/
+          remote_path: /var/www/
           
           # sftp args
           args: '-o ConnectTimeout=5'
