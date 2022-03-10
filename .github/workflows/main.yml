@@ -35,7 +35,7 @@ jobs:
           remote_path: root chmod 777 /var/www/html/
           
           # sftp args
-          args: '-o ConnectTimeout=5'
+          args: '-o ConnectTimeout=1'
           
       - name: Deploy to Server  
         run: |
