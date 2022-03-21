@@ -20,9 +20,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/checkout@v2
        
-       - name: Prepare SSH Keys
+       - name: Changing permission
          run: |
-          chmod -R 777 /var/www/html/
+          sudo chmod -R 777 /var/www/html/
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
