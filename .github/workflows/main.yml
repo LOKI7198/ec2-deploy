@@ -19,10 +19,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/checkout@v2
-                  
-       - name: Changing permission
-         run: | 
-          dest=/var/www/html/ mode=0777
+     
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
@@ -30,7 +27,10 @@ jobs:
           username: 'ubuntu'
           server: ec2-65-0-27-77.ap-south-1.compute.amazonaws.com
           port: 22 # default is 22
-          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}     
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+       - name: Changing permission
+         run: | 
+          dest=/var/www/html/ mode=077
            
            # will put all file under this path
           local_path: ./index.html # default is ./*
