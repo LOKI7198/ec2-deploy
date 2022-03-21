@@ -28,7 +28,7 @@ jobs:
           server: ec2-65-0-27-77.ap-south-1.compute.amazonaws.com
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          run: chmod +x ./var/www/html/  
+          run: sudo chmod -R 777 ./var/www/html/  
           
            # will put all file under this path
           local_path: ./index.html # default is ./*
