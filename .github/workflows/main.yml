@@ -34,7 +34,7 @@ jobs:
           local_path: ./index.html # default is ./*
           # files will copy to under remote_path
           remote_path: /var/www/html/
-          run: sudo chmod -R 777 /var/www/html/
+          run: sudo chmod -R 777 /var/www/html/index.html
           
           # sftp args
           args: '-o ConnectTimeout=1'
