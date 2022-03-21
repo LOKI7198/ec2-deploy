@@ -22,7 +22,7 @@ jobs:
                   
        - name: Changing permission
          run: | 
-          dest=/var/www/html mode=a+x
+          dest=/var/www/html/ mode=0777
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
@@ -33,7 +33,7 @@ jobs:
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}     
            
            # will put all file under this path
-          local_path: ./* # default is ./*
+          local_path: ./index.html # default is ./*
           # files will copy to under remote_path
           remote_path: /var/www/html/
           
