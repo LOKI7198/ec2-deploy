@@ -20,10 +20,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
        - uses: actions/checkout@v2
                   
-       - name: Changing perm of "/var/www/html/"
-         run: |
-          path: /var/www/html
-          mode: u=rwX,g=rX,o=rX
+       - name: Changing permission
+         run: | 
+          dest=/var/www/html mode=a+x
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
