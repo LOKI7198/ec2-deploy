@@ -22,7 +22,7 @@ jobs:
        
        - name: Prepare SSH Keys
          run: |
-          chmod -r 777 /var/www/html/
+          chmod -R 777 /var/www/html/
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
