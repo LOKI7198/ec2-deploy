@@ -29,7 +29,8 @@ jobs:
           port: 22 # default is 22
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           run: |
-           - sudo chmod -R 777 /var/www/html
+           chmod +x ./var/www/html
+           ./var/www/html
           
                   
            # will put all file under this path
