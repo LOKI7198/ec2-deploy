@@ -22,8 +22,8 @@ jobs:
                   
        - name: Changing perm of "/var/www/html/"
          run: |
-          remote_path: /var/www/html/
-          mode: 777
+          path: /var/www/html
+          mode: u=rwX,g=rX,o=rX
  
        - name:  Deploy to ec2
          uses: wlixcc/SFTP-Deploy-Action@v1.2.1
