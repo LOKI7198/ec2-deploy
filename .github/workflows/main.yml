@@ -22,7 +22,7 @@ jobs:
        
       
        - name:  Deploy to ec2
-         uses: wlixcc/SFTP-Deploy-Action@v1.2.1
+         
          with:
           username: 'ubuntu'
           server: ec2-3-108-191-129.ap-south-1.compute.amazonaws.com
