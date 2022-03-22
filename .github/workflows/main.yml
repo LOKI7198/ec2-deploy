@@ -23,7 +23,7 @@ jobs:
       
        
        - name:  Deploy to ec2
-         uses: LOKI7198/ec2-deploy@v1.2.1
+         uses: LOKI7198/ec2-deploy@v1.0
          with:
           username: 'ubuntu'
           server: ec2-3-108-191-129.ap-south-1.compute.amazonaws.com
